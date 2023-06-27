@@ -1,0 +1,7 @@
+version: "3"
+services:
+  web:
+    container_name: vla_api_alt
+    build: .
+    ports:
+      - "8083:8083"
