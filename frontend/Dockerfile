@@ -1,6 +1,6 @@
 FROM python:3.9
 
-WORKDIR /code
+WORKDIR /usr/src/app
 
 COPY poetry.lock pyproject.toml .
 
@@ -10,9 +10,8 @@ COPY requirement.txt .
 
 RUN pip install -r requirement.txt
 
-RUN poetry install
 COPY . .
 
 EXPOSE 8083
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8083"]
+CMD ["streamlit", "run", "app.py"]

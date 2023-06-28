@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  front-end:
+    image: snana/vlt:v2
+    container_name: 'front-end'
+    depends_on:
+      - back-end
+    ports:
+      - 8083:8083
+  back-end:
+    image: snana/vlt-bk:latest
+    container_name: 'back-end'
+    
+    ports:
+      - 6060:8083
